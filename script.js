@@ -54,8 +54,5 @@ function checkAnswer(){
 }
 
 
-
-
-
 answersEl.addEventListener("click", checkAnswer)
 startButton.addEventListener("click", init)

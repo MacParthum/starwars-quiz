@@ -1,12 +1,22 @@
 var questions = [
     {
-        question: "Who is lukes father?",
-        answers: ["Darth Vador", "boba fet", "pad ma", "pizza the hut"],
+        question: "Who said Luke I am your father?",
+        answers: ["Darth Vader", "Boba Fett", "Din Djarin", "Millenium Falcon"],
         correct: 0
     },
     {
-        question: "Who is the worst star wars charcter?",
-        answers: ["Darth Vador", "boba fet", "jar jar binks", "pizza the hut"],
+        question: "Who is the most annoying star wars charcter?",
+        answers: ["Darth Vader", "Jar Jar Binks", "Din Djarin", "Millenium Falcon"],
+        correct: 1
+    },
+    {
+        question: "What is the Mandalorians real name?",
+        answers: ["Darth Vader", "Boba Fett", "Din Djarin", "Millenium Falcon"],
         correct: 2
+    },
+    {
+        question: "Whats the name of Han Solos ship?",
+        answers: ["Darth Vader", "Boba Fett", "Jar Jar Binks", "Millenium Falcon"],
+        correct: 3
     }
 ]
