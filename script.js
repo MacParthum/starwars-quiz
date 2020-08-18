@@ -33,7 +33,7 @@ function showQuestion (){
 function init(){
     //start timer
     time()
-    //make welcom screen invisible
+    //make welcome screen invisible
     var startScreen = document.getElementById("startScreen")
     startScreen.setAttribute("class", "d-none")
     //display first question
@@ -53,6 +53,53 @@ function checkAnswer(){
 
 }
 
-
 answersEl.addEventListener("click", checkAnswer)
 startButton.addEventListener("click", init)
+
+
+function checkAnswer(event) {
+    correctAnswer =questions[currentQuestion].correct;
+    console.log(parseInt(event.target.value) , correctAnswer)
+    if (parseInt(event.target.value) === correctAnswer) {
+      alert("You are correct!");
+    }else{
+      alert("You are wrong!")
+      secondsLeft-=10;
+    }
+    currentQuestion++;
+    if (currentQuestion < questions.length) {
+      showQuestion();
+    }else{
+      showScore();
+    }
+  }
+  function showScore() {
+    clearInterval(timerInterval);
+    quizQuestionsEl.removeAttribute("class");
+    quizQuestionsEl.setAttribute("class", "hide");
+    quizEndEl.removeAttribute("class");
+    quizEndEl.setAttribute("class", "row");
+    scoreEL.textContent = "Time Left: "+ timeLeft
+  }
+  //saveScoreEl.addEventListener("click", saveScore)
+  function saveScore() {
+    var highScores = JSON.parse(localStorage.getItem("highscores")) || []
+    var initials = initialsEl.value
+    var newScore = {initials:initials, score: timeLeft}
+    highScores.push(newScore);
+    localStorage.setItem("highscores", JSON.stringify(highScores))
+    window.location.href = "scores.html";
+    loadScores()
+  }
+  function loadScores() {
+    var highScores = JSON.parse(localStorage.getItem("highscores")) || []
+    highScores.sort(function(a,b){
+      return b.score - a.score;
+    })
+    var highscoreEL = document.getElementById("highscores");
+    for (var i = 0; i < highScores.length; i++) {
+      var liTag = document.createElement("li");
+      liTag.textContent= highScores[i].score + " - " + highScores[i].initials;
+      highscoreEL.appendChild(liTag)
+    }
+  }

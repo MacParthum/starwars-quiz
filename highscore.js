@@ -14,3 +14,4 @@ for(var i = 0; i<scores.length; i++){
   tr.appendChild(scorez)
   table.appendChild(tr)
 }
+
