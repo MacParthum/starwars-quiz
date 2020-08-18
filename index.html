@@ -19,7 +19,7 @@
           <a href="./highscores.html">highscores</a>
         </div>
         <div class="col-sm-6">
-          <h1>Star Wars Trivia Game</h1>
+          <h1></h1>
         </div>
         <div class="col-sm-3">
           <div id="timer">
@@ -29,14 +29,15 @@
       </header>
       <div class="row m-4" id="startScreen">
         <div class="col-sm-2"></div>
-        <div class="jumbotron col-sm-8">
-          <h2>Welcome to the Star Wars Trivia Game</h2>
-        <button id="start"> Start</button>
+        <div class="jumbotron col-sm-8 bg-primary">
+          <h2 style="text-align:center">Welcome to the Star Wars Trivia Game</h2>
+        <button id="start" class="btn btn-success">Start the Quiz!</button>
+
         </div>
       </div>
       <div class="row m-4 d-none" id="gameField">
         <div class="col-sm-2"></div>
-        <div class="jumbotron col-sm-8 ">
+        <div class="jumbotron col-sm-8 bg-primary text-center">
           <h2>Question: <span id="question" ></span></h2>
           <div id="answers"></div>
         </div>

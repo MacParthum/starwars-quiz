@@ -5,7 +5,7 @@ var questions = [
         correct: 0
     },
     {
-        question: "Who is the most annoying star wars charcter?",
+        question: "Most annoying star wars charcter?",
         answers: ["Darth Vader", "Jar Jar Binks", "Din Djarin", "Millenium Falcon"],
         correct: 1
     },
